@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDiet } from '../context/DietContext';
 import { Download, Share2, Printer, CheckCircle } from 'lucide-react';
-
+import {Link} from 'react-router-dom';
+import { ShoppingCart } from 'lucide-react';
 const DietChart = () => {
   const { userProfile } = useDiet();
   
@@ -25,7 +26,15 @@ const DietChart = () => {
   return (
     <div className="min-h-screen bg-slate-50 px-4 py-8">
       <div className="max-w-7xl mx-auto">
-        
+        <Link to="/recipe/101" className="text-emerald-600 font-bold text-sm hover:underline mt-2 inline-block">
+  View Recipe &rarr;
+</Link>
+<Link 
+  to="/shopping-list" 
+  className="flex items-center gap-2 bg-white border border-slate-200 hover:border-emerald-500 text-slate-600 hover:text-emerald-600 px-5 py-2.5 rounded-xl font-bold transition-all shadow-sm hover:shadow-md"
+>
+  <ShoppingCart size={18} /> Shopping List
+</Link>
         {/* NEW HEADER: CLEAN WHITE STYLE */}
         <div className="bg-white rounded-3xl shadow-lg border border-slate-100 p-8 mb-8 relative overflow-hidden">
           {/* Subtle Background Gradient instead of Black */}
